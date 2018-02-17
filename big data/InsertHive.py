@@ -8,7 +8,6 @@ def _hql(self, hql):
     finally:
         client.shutdown()
 
-
 def insert(self, table_name, rows):
     ''' cannot insert single rows via hive, need to save to a temp file and bulk load that '''
     csv_file = NamedTemporaryFile(delete=True)
