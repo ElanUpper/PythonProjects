@@ -42,11 +42,3 @@ with open('write.md', 'w', encoding='utf-8') as fp:
     fp.write('hello，你好')
 with open('write.md', 'a', encoding='utf-8') as fp:
     fp.write('\nhello，追加')
-
-
-# 利用屏幕演示flush效果
-import sys, time
-for i in range(20):
-    sys.stdout.write('#');
-    sys.stdout.flush();
-    time.sleep(0.1)

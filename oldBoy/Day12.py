@@ -1,6 +1,6 @@
 # author: elan
 
-import os, time
+import os, time, sys
 
 # os
 print(os.getcwd()) # 获取当前工作目录 python的工作路径
@@ -62,3 +62,25 @@ print('{} \n create time {} \n access time {} \n modify time {} \n size {}'.form
          time.ctime(os.path.getmtime(file)),
          str(round(int(os.path.getsize(file))/1024, 2)) + 'kb'
 ));
+
+
+# sys.argv 调用python时候传入的参数 默认argv[0]是python路径地址
+print('the called parameters', sys.argv)
+# sys.exit 退出程序
+#sys.exit(0)
+# 打印python version
+print(sys.version)
+# 打印最大int
+#print(sys.maxunicode, sys.maxsize)
+# 操作系统平台
+print(sys.platform)
+# write data into stdin, read data from stdout
+sys.stdout.write(input());
+print(sys.stdin.readline()[:-1])
+# sys.stdout.flush();
+
+# 利用屏幕演示flush效果
+for i in range(20):
+    sys.stdout.write('#');
+    sys.stdout.flush();
+    time.sleep(0.1)
