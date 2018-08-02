@@ -1,0 +1,33 @@
+# author: elan
+
+import shelve
+
+# 支持将k,v进行文件的持久化
+# 生成.dir / .dat / .bak文件
+
+#-------- 将数据存储
+
+class Shv(object):
+    def __init__(self, data):
+        self.data = data ;
+
+shv1 = shelve.open('shvdata')  # 打开一个文件
+
+s1 = Shv(1)
+s2 = Shv('elan')
+
+name_list = ['elan', 'jade']
+
+shv1["cls_name"] = name_list ;
+shv1["s1"] = s1 ;
+shv1["s2"] = s2 ;
+
+shv1.close();
+
+
+#-------- 将数据进行解析
+
+shv_2 = shelve.open('shvdata');
+
+print(shv_2.get("cls_name"))
+print(shv_2.get("s1").data)

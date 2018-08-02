@@ -1,0 +1,28 @@
+# author: elan
+
+import xml.etree.ElementTree as ET
+
+xml_data = '''
+ <?xml version="1.0" encoding="utf-8"?>
+ <DataPool>
+ <DataSheetid="01"name="ryxx">
+ <DataFieldid="001"name="xm">
+ <Dataid="0001">姓名1</Data>
+ <Dataid="0002">姓名2</Data>
+ <Dataid="0003">姓名3</Data>
+ </DataField>
+ <DataFieldid="002"name="xb">
+ <Dataid="0001">男</Data>
+ <Dataid="0002">女</Data>
+ </DataField>
+ </DataSheet>
+ <DataSheetid="02"name="book">
+ <DataFieldid="001"name="bookname">
+ <Dataid="0001">《C#入门经典》</Data>
+ </DataField>
+ </DataSheet>
+ </DataPool>
+'''
+
+tree = ET.parse(xml_data)
+root = tree.getroot()
